@@ -57,7 +57,6 @@ public class ListRandom {
 		in.close();
 		printTime(startTime,System.currentTimeMillis());
 		
-		
 		lista.removeAll(lista);
 		
 		
@@ -72,7 +71,7 @@ public class ListRandom {
 		}
 		lista = setaki.stream().collect(Collectors.toCollection(ArrayList::new));
 		printTime(startTime,System.currentTimeMillis());
-		
+		//ListRandom.printlist();
 	
 		
 		lista.removeAll(lista);
@@ -90,7 +89,7 @@ public class ListRandom {
 				lista.add(toAdd);
 		}
 		printTime(startTime,System.currentTimeMillis());
-		
+		//ListRandom.printlist();
 		lista.removeAll(lista);
 		
 		
@@ -98,13 +97,15 @@ public class ListRandom {
 		
 		
 		int [] existing = new int[max_int];
+		
 		startTime = System.currentTimeMillis();
-		for(int i =0 ; i <max_int ; i++) {
+		
+		while(lista.size() < max_int){
 			toAdd = globalrand.nextInt(max_int+1) + 0;
 			Arrays.parallelSort(existing);
 			if(Arrays.binarySearch(existing, toAdd)<0) lista.add(toAdd);
-		};
-		
+		}
+		//ListRandon.printlist();
 		printTime(startTime,System.currentTimeMillis());
 		
 		
@@ -139,6 +140,7 @@ public class ListRandom {
 		//ListRandom.printlist();
 		
 		//8th way
+		
 		
 		
 
